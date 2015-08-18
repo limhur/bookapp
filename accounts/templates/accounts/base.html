@@ -1,0 +1,59 @@
+{# Load the author library #}
+{% load bootstrap3 %}
+
+<head>
+  <title>
+    {%block title%}
+    {%endblock%}
+  </title>
+</head>
+{# Load CSS and JavaScript #}
+{% bootstrap_css %}
+{% bootstrap_javascript jquery=1%}
+
+<link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+<script type="text/css">
+.mynavbar {
+    display:block;
+    margin:0px;
+    padding:0px;
+    height:50px;
+}
+
+</script>
+
+...
+<body>
+<div class="mynavbar">
+        <ul class="nav nav-tabs navbar-right">
+              <li role="presentation" class="dropdown">
+                <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="true">
+                  {%if user.is_authenticated%}
+                      <img src="/media/{{curruser.picture}}" height="30px" %} />
+                      Hi {{user.username}}!
+                  {%else%}
+                      Login here!
+                  {%endif%}
+                  
+                  <span class="caret"></span>
+                </a>
+                <ul class="dropdown-menu">
+                  {%if user.is_authenticated%}
+                      <li><a href="/accounts/logout">Logout</a></li>
+                      <li><a href="/add">Add a new book</a></li>
+                      <li><a href="/list">View all my books</a></li>
+                  {%else%}
+                      <li><a href="/accounts/login">Login</a></li>
+                  {%endif%}
+                
+                      
+                </ul>
+              </li>
+            </ul>
+</div>
+<body>
+{%block content%}
+	To be replaced by actual content
+{%endblock%}
+</body>
+

@@ -1,0 +1,38 @@
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+* { box-sizing:border-box; }
+body { background:url(media/wood-pattern.png) #cacaca; margin:30px; }
+
+.bdisplay  { 
+	display: block;
+	padding:25px 25px 40px;
+	margin:0 auto 00px auto;
+	width:1500px;
+	height:auto; 
+	min-height:200px;
+	font:20px 'Open Sans', sans-serif; 
+	line-height:1.5;
+	border-radius:3px;
+	background-color: #ffffff;
+    border: 1px solid black;
+    opacity: 0.6;
+	box-shadow:0 4px 6px rgba(0,0,0,0.1);
+	overflow:hidden;
+	transition:box-shadow 0.5s ease;
+	font-smoothing:subpixel-antialiased;
+	max-width:2400px;
+	/*max-height:250px;*/
+
+}
+
+.boxtext {
+    margin: 5%;
+    font-weight: bold;
+    color: #000000;
+}
+
+a:link{
+    	text-decoration: None;
+}
+textarea:hover { box-shadow:0 5px 8px rgba(0,0,0,0.15); }
+textarea:focus { box-shadow:0 5px 12px rgba(0,0,0,0.2); outline:none; }
+

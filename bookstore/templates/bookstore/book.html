@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{{book.title}}</title>
+    </head>
+    <body>
+        Title:{{book.title}} <br/>
+        Synopsis:{{book.synopsis}}<br/>
+        Genre:{{book.genre}}<br/>
+        Author(s):
+        <ul>
+        <!--https://docs.djangoproject.com/en/1.7/ref/templates/builtins/#for-->
+        {%for t in book.author.all%}
+            <li>{{t.author}}</li>
+        {%endfor%}
+        </ul>
+    </body>
+</html>

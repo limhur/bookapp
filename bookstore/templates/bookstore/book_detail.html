@@ -1,0 +1,21 @@
+{%extends 'bookstore/base.html'%}
+{%block title%}
+    Book - {{book.title}}
+{%endblock%}
+{%block content%}
+    <div class="container">
+        <h4>Title</h4> 
+        <p>{{book.title}}</p>
+        <h4>Synopsis</h4>
+        <p>{{book.synopsis}}</p>
+        <h4>Genre</h4>
+        <p>{{book.genre}}</p>
+        <h4>Author(s):</h4>
+                <ul>
+                <!--https://docs.djangoproject.com/en/1.7/ref/templates/builtins/#for-->
+                {%for t in book.author.all%}
+                    <li>{{t.title}}</li>
+                {%endfor%}
+                </ul>
+    </div>
+{%endblock%}

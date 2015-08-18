@@ -1,0 +1,19 @@
+{%load staticfiles%}
+<link rel="stylesheet" type="text/css" href="{% static 'bookstore/style.css' %}" />
+    <h2>Total number of books: {{total}}</h2>
+    {% if object_list  %}
+        {% for book in object_list  %}
+            <a href={%url 'detail' book.id %}>
+            	<div class="bdisplay" style="background:{{book.color}};color:{{book.fontcolor}}">
+            	  <div id="base" style="border-color:{{book.folder.color}} transparent transparent transparent;">
+  </div>
+            <br>
+            <u>{{book.title}}</u>
+            <br>
+            {{book.synopsis}}
+      </div>
+            </a>
+        {% endfor %}
+    {% else %}
+        <p>No books are available.</p>
+    {% endif %}

@@ -1,0 +1,52 @@
+{%extends 'bookstore/base.html'%}
+{% load crispy_forms_tags %}
+{%block content%}
+<div id="mymessage" class="form-group alert-danger">
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h3>Add a new book</h3>
+            {%if addbook_form %}
+                {%crispy addbook_form%}
+            {%endif%}
+            
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add New Genre</h4>
+                  </div>
+                  <div class="modal-body">
+                    <!--MODAL ADD FOLDER-->
+                    {%if addgenre_form%} {% crispy addgenre_form %} {%endif%}
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+              <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Add New Author</h4>
+                  </div>
+                  <div class="modal-body">
+                    {%if addauthor_form%} {% crispy addauthor_form %} {%endif%}
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+{%endblock%}

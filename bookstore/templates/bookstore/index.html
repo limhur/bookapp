@@ -1,0 +1,22 @@
+{%load staticfiles%}
+<link rel="stylesheet" type="text/css" href="{% static 'bookstore/style.css' %}" />
+
+<h1 fontcolor='#ffffff'>Total number of books: {{total}}</h1>
+
+{% if bookstore %}
+    <ul>
+    {% for book in bookstore %}
+        <a href={%url 'detail' book.id %}>
+            <div class="bdisplay" style="background:{{note.color}};color:{{note.fontcolor}}">
+                <u class = 'boxtext'>{{book.title}}</u>
+                <br>
+                {{book.synopsis}}
+            </div>
+        </a>
+
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No books are available.</p>
+{% endif %}
+
